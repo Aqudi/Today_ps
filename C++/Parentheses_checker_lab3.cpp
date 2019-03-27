@@ -39,6 +39,7 @@ class stackarray
 int check(char exp[])
 {
     stackarray checker;
+    bool mismatched;
     for (int i = 0; i < strlen(exp); i++)
     {
         if (exp[i] == '(' || exp[i] == '{' || exp[i] == '[')
@@ -55,15 +56,29 @@ int check(char exp[])
             {
                 char temp = checker.pop();
                 if (temp != '(' && exp[i] == ')')
-                    cout << "Mismatched " << temp << " , " << exp[i];
+                {
+                    cout << "Mismatched " << temp << " , " << exp[i] << " ";
+                    mismatched = true;
+                }
                 if (temp != '{' && exp[i] == '}')
-                    cout << "Mismatched " << temp << " , " << exp[i];
+                {
+                    cout << "Mismatched " << temp << " , " << exp[i] << " ";
+                    mismatched = true;
+                }
                 if (temp != '[' && exp[i] == ']')
-                    cout << "Mismatched " << temp << " , " << exp[i];
+                {
+                    cout << "Mismatched " << temp << " , " << exp[i] << " ";
+                    mismatched = true;
+                }
             }
     }
     if (checker.isEmpty())
-        return true;
+    {
+        if (!mismatched)
+        {
+            return true;
+        }
+    }
     else
     {
         cout << "Unbalanced";
