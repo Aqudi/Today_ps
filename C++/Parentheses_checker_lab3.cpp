@@ -49,7 +49,7 @@ int check(char exp[])
             if (checker.isEmpty())
             {
                 cout << "Unbalanced ";
-                break;
+                return false;
             }
             else
             {
