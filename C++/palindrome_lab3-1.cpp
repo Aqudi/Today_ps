@@ -87,7 +87,7 @@ int main()
     reader.open("Lab3-1.txt", ios::in);
     if (!reader.is_open())
     {
-        cout << "파일을 열지 못했습니다.";
+        cout << "File is not opened";
         exit(1);
     }
     else
