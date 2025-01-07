@@ -4,7 +4,7 @@ arr = [int(input()) for _ in range(n)]
 # Write your code here!
 left = 1
 right = max(arr)
-result = None
+result = 0
 
 while left <= right:
     mid = (left + right) // 2
